@@ -47,7 +47,7 @@ fn main() {
     }
     rerun_if_changed();
 
-    let temp_dir = PathBuf::from("./stubs");
+    let temp_dir = env::temp_dir();
     compile_library_stub("src/sys/stubs/nvcuvid.c",  NVDEC_LIB.1, temp_dir.to_str().unwrap());
     compile_library_stub("src/sys/stubs/nvEncodeAPI.c", NVENC_LIB.1, temp_dir.to_str().unwrap());
 

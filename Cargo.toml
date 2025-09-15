@@ -1,7 +1,6 @@
 [package]
 name = "nvidia-video-codec-sdk"
-version = "0.3.4"
-
+version = "0.3.5"
 edition = "2021"
 license = "MIT"
 rust-version = "1.70"
