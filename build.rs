@@ -50,7 +50,8 @@ fn main() {
     // compile_library_stub("src/sys/stubs/nvcuvid.c",  NVDEC_LIB.1, temp_dir.to_str().unwrap());
     // compile_library_stub("src/sys/stubs/nvEncodeAPI.c", NVENC_LIB.1, temp_dir.to_str().unwrap());
 
-    println!("cargo:rustc-link-search=native=stubs/linux");
+    let crate_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
+    println!("cargo:rustc-link-search=native={}/stubs/linux", crate_dir);
 
     // Link to libraries.
     println!("cargo:rustc-link-lib=dylib={}", NVENC_LIB.0);
